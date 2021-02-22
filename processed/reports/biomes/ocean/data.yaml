@@ -6,13 +6,6 @@ carvers:
   - config:
       probability: 0.02
     type: minecraft:canyon
-  liquid:
-  - config:
-      probability: 0.02
-    type: minecraft:underwater_canyon
-  - config:
-      probability: 0.06666667
-    type: minecraft:underwater_cave
 category: ocean
 depth: -1.0
 downfall: 0.5
@@ -32,33 +25,6 @@ features:
       decorator:
         config:
           chance: 4
-        type: minecraft:water_lake
-      feature:
-        config:
-          state:
-            Name: minecraft:water
-            Properties:
-              level: '0'
-        type: minecraft:lake
-    type: minecraft:decorated
-  - config:
-      decorator:
-        config:
-          chance: 80
-        type: minecraft:lava_lake
-      feature:
-        config:
-          state:
-            Name: minecraft:lava
-            Properties:
-              level: '0'
-        type: minecraft:lake
-    type: minecraft:decorated
-- []
-- - config:
-      decorator:
-        config:
-          chance: 48
         type: minecraft:chance
       feature:
         config:
@@ -69,9 +35,77 @@ features:
             config:
               decorator:
                 config:
-                  bottom_offset: 6
-                  maximum: 47
-                  top_offset: 0
+                  bottom_inclusive:
+                    above_bottom: 0
+                  top_inclusive:
+                    below_top: 0
+                type: minecraft:range
+              feature:
+                config:
+                  state:
+                    Name: minecraft:water
+                    Properties:
+                      level: '0'
+                type: minecraft:lake
+            type: minecraft:decorated
+        type: minecraft:decorated
+    type: minecraft:decorated
+  - config:
+      decorator:
+        config:
+          chance: 8
+        type: minecraft:chance
+      feature:
+        config:
+          decorator:
+            config: {}
+            type: minecraft:square
+          feature:
+            config:
+              decorator:
+                config:
+                  bottom_inclusive:
+                    above_bottom: 0
+                  cutoff: 8
+                  top_inclusive:
+                    below_top: 0
+                type: minecraft:range_biased_to_bottom
+              feature:
+                config:
+                  decorator:
+                    config:
+                      chance: 80
+                    type: minecraft:lava_lake
+                  feature:
+                    config:
+                      state:
+                        Name: minecraft:lava
+                        Properties:
+                          level: '0'
+                    type: minecraft:lake
+                type: minecraft:decorated
+            type: minecraft:decorated
+        type: minecraft:decorated
+    type: minecraft:decorated
+- []
+- - config:
+      decorator:
+        config:
+          chance: 30
+        type: minecraft:chance
+      feature:
+        config:
+          decorator:
+            config: {}
+            type: minecraft:square
+          feature:
+            config:
+              decorator:
+                config:
+                  bottom_inclusive:
+                    above_bottom: 6
+                  top_inclusive:
+                    absolute: 46
                 type: minecraft:range
               feature:
                 config:
@@ -156,9 +190,10 @@ features:
             config:
               decorator:
                 config:
-                  bottom_offset: 0
-                  maximum: 256
-                  top_offset: 0
+                  bottom_inclusive:
+                    above_bottom: 0
+                  top_inclusive:
+                    below_top: 0
                 type: minecraft:range
               feature:
                 config: {}
@@ -171,7 +206,7 @@ features:
 - - config:
       decorator:
         config:
-          count: 10
+          count: 15
         type: minecraft:count
       feature:
         config:
@@ -182,9 +217,10 @@ features:
             config:
               decorator:
                 config:
-                  bottom_offset: 0
-                  maximum: 256
-                  top_offset: 0
+                  bottom_inclusive:
+                    absolute: 0
+                  top_inclusive:
+                    below_top: 0
                 type: minecraft:range
               feature:
                 config:
@@ -201,7 +237,7 @@ features:
   - config:
       decorator:
         config:
-          count: 8
+          count: 12
         type: minecraft:count
       feature:
         config:
@@ -212,9 +248,10 @@ features:
             config:
               decorator:
                 config:
-                  bottom_offset: 0
-                  maximum: 256
-                  top_offset: 0
+                  bottom_inclusive:
+                    absolute: 0
+                  top_inclusive:
+                    below_top: 0
                 type: minecraft:range
               feature:
                 config:
@@ -231,7 +268,7 @@ features:
   - config:
       decorator:
         config:
-          count: 10
+          count: 2
         type: minecraft:count
       feature:
         config:
@@ -242,13 +279,14 @@ features:
             config:
               decorator:
                 config:
-                  bottom_offset: 0
-                  maximum: 80
-                  top_offset: 0
+                  bottom_inclusive:
+                    absolute: 0
+                  top_inclusive:
+                    absolute: 79
                 type: minecraft:range
               feature:
                 config:
-                  size: 33
+                  size: 64
                   state:
                     Name: minecraft:granite
                   target:
@@ -261,7 +299,7 @@ features:
   - config:
       decorator:
         config:
-          count: 10
+          count: 2
         type: minecraft:count
       feature:
         config:
@@ -272,13 +310,14 @@ features:
             config:
               decorator:
                 config:
-                  bottom_offset: 0
-                  maximum: 80
-                  top_offset: 0
+                  bottom_inclusive:
+                    absolute: 0
+                  top_inclusive:
+                    absolute: 79
                 type: minecraft:range
               feature:
                 config:
-                  size: 33
+                  size: 64
                   state:
                     Name: minecraft:diorite
                   target:
@@ -291,7 +330,7 @@ features:
   - config:
       decorator:
         config:
-          count: 10
+          count: 4
         type: minecraft:count
       feature:
         config:
@@ -302,13 +341,14 @@ features:
             config:
               decorator:
                 config:
-                  bottom_offset: 0
-                  maximum: 80
-                  top_offset: 0
+                  bottom_inclusive:
+                    above_bottom: 0
+                  top_inclusive:
+                    absolute: 79
                 type: minecraft:range
               feature:
                 config:
-                  size: 33
+                  size: 64
                   state:
                     Name: minecraft:andesite
                   target:
@@ -321,7 +361,7 @@ features:
   - config:
       decorator:
         config:
-          count: 20
+          count: 30
         type: minecraft:count
       feature:
         config:
@@ -332,9 +372,10 @@ features:
             config:
               decorator:
                 config:
-                  bottom_offset: 0
-                  maximum: 128
-                  top_offset: 0
+                  bottom_inclusive:
+                    absolute: 136
+                  top_inclusive:
+                    below_top: 0
                 type: minecraft:range
               feature:
                 config:
@@ -362,10 +403,40 @@ features:
             config:
               decorator:
                 config:
-                  bottom_offset: 0
-                  maximum: 64
-                  top_offset: 0
-                type: minecraft:range
+                  baseline:
+                    absolute: 96
+                  spread: 96
+                type: minecraft:depth_average
+              feature:
+                config:
+                  size: 17
+                  state:
+                    Name: minecraft:coal_ore
+                  target:
+                    predicate_type: minecraft:tag_match
+                    tag: minecraft:base_stone_overworld
+                type: minecraft:ore
+            type: minecraft:decorated
+        type: minecraft:decorated
+    type: minecraft:decorated
+  - config:
+      decorator:
+        config:
+          count: 20
+        type: minecraft:count
+      feature:
+        config:
+          decorator:
+            config: {}
+            type: minecraft:square
+          feature:
+            config:
+              decorator:
+                config:
+                  baseline:
+                    absolute: 32
+                  spread: 48
+                type: minecraft:depth_average
               feature:
                 config:
                   size: 9
@@ -381,7 +452,7 @@ features:
   - config:
       decorator:
         config:
-          count: 2
+          count: 40
         type: minecraft:count
       feature:
         config:
@@ -392,10 +463,40 @@ features:
             config:
               decorator:
                 config:
-                  bottom_offset: 0
-                  maximum: 32
-                  top_offset: 0
-                type: minecraft:range
+                  baseline:
+                    absolute: 256
+                  spread: 128
+                type: minecraft:depth_average
+              feature:
+                config:
+                  size: 9
+                  state:
+                    Name: minecraft:iron_ore
+                  target:
+                    predicate_type: minecraft:tag_match
+                    tag: minecraft:base_stone_overworld
+                type: minecraft:ore
+            type: minecraft:decorated
+        type: minecraft:decorated
+    type: minecraft:decorated
+  - config:
+      decorator:
+        config:
+          count: 4
+        type: minecraft:count
+      feature:
+        config:
+          decorator:
+            config: {}
+            type: minecraft:square
+          feature:
+            config:
+              decorator:
+                config:
+                  baseline:
+                    absolute: -16
+                  spread: 48
+                type: minecraft:depth_average
               feature:
                 config:
                   size: 9
@@ -411,7 +512,7 @@ features:
   - config:
       decorator:
         config:
-          count: 8
+          count: 6
         type: minecraft:count
       feature:
         config:
@@ -422,9 +523,10 @@ features:
             config:
               decorator:
                 config:
-                  bottom_offset: 0
-                  maximum: 16
-                  top_offset: 0
+                  bottom_inclusive:
+                    above_bottom: 0
+                  top_inclusive:
+                    absolute: 15
                 type: minecraft:range
               feature:
                 config:
@@ -442,25 +544,32 @@ features:
     type: minecraft:decorated
   - config:
       decorator:
-        config: {}
-        type: minecraft:square
+        config:
+          count: 4
+        type: minecraft:count
       feature:
         config:
           decorator:
-            config:
-              bottom_offset: 0
-              maximum: 16
-              top_offset: 0
-            type: minecraft:range
+            config: {}
+            type: minecraft:square
           feature:
             config:
-              size: 8
-              state:
-                Name: minecraft:diamond_ore
-              target:
-                predicate_type: minecraft:tag_match
-                tag: minecraft:base_stone_overworld
-            type: minecraft:ore
+              decorator:
+                config:
+                  baseline:
+                    above_bottom: 0
+                  spread: 80
+                type: minecraft:depth_average
+              feature:
+                config:
+                  size: 8
+                  state:
+                    Name: minecraft:diamond_ore
+                  target:
+                    predicate_type: minecraft:tag_match
+                    tag: minecraft:base_stone_overworld
+                type: minecraft:ore
+            type: minecraft:decorated
         type: minecraft:decorated
     type: minecraft:decorated
   - config:
@@ -471,8 +580,9 @@ features:
         config:
           decorator:
             config:
-              baseline: 16
-              spread: 16
+              baseline:
+                absolute: 0
+              spread: 32
             type: minecraft:depth_average
           feature:
             config:
@@ -487,8 +597,32 @@ features:
     type: minecraft:decorated
   - config:
       decorator:
+        config: {}
+        type: minecraft:square
+      feature:
         config:
-          count: 10
+          decorator:
+            config:
+              bottom_inclusive:
+                above_bottom: 0
+              top_inclusive:
+                absolute: 64
+            type: minecraft:range
+          feature:
+            config:
+              size: 7
+              state:
+                Name: minecraft:lapis_ore
+              target:
+                predicate_type: minecraft:tag_match
+                tag: minecraft:base_stone_overworld
+            type: minecraft:no_surface_ore
+        type: minecraft:decorated
+    type: minecraft:decorated
+  - config:
+      decorator:
+        config:
+          count: 20
         type: minecraft:count
       feature:
         config:
@@ -499,10 +633,10 @@ features:
             config:
               decorator:
                 config:
-                  bottom_offset: 0
-                  maximum: 64
-                  top_offset: 0
-                type: minecraft:range
+                  baseline:
+                    absolute: 48
+                  spread: 48
+                type: minecraft:depth_average
               feature:
                 config:
                   size: 10
@@ -512,6 +646,36 @@ features:
                     predicate_type: minecraft:tag_match
                     tag: minecraft:base_stone_overworld
                 type: minecraft:ore
+            type: minecraft:decorated
+        type: minecraft:decorated
+    type: minecraft:decorated
+  - config:
+      decorator:
+        config:
+          count:
+            base: 4
+            spread: 6
+        type: minecraft:count
+      feature:
+        config:
+          decorator:
+            config:
+              bottom_inclusive:
+                above_bottom: 0
+              top_inclusive:
+                absolute: 39
+            type: minecraft:range
+          feature:
+            config:
+              decorator:
+                config: {}
+                type: minecraft:square
+              feature:
+                config:
+                  floor_search_range: 5
+                  placement_probability_per_valid_position: 0.5
+                  placement_radius_around_floor: 1
+                type: minecraft:underwater_magma
             type: minecraft:decorated
         type: minecraft:decorated
     type: minecraft:decorated
@@ -600,16 +764,17 @@ features:
       decorator:
         config:
           count:
-            base: 5
-            spread: 5
+            base: 20
+            spread: 20
         type: minecraft:count
       feature:
         config:
           decorator:
             config:
-              bottom_offset: 0
-              maximum: 55
-              top_offset: 0
+              bottom_inclusive:
+                above_bottom: 0
+              top_inclusive:
+                absolute: 54
             type: minecraft:range
           feature:
             config:
@@ -626,11 +791,12 @@ features:
                   - Name: minecraft:dripstone_block
                   - Name: minecraft:calcite
                   - Name: minecraft:tuff
+                  - Name: minecraft:grimstone
                   can_place_on_ceiling: true
                   can_place_on_floor: false
                   can_place_on_wall: true
                   chance_of_spreading: 0.5
-                  search_range: 10
+                  search_range: 20
                 type: minecraft:glow_lichen
             type: minecraft:decorated
         type: minecraft:decorated
@@ -972,10 +1138,12 @@ features:
             config:
               decorator:
                 config:
-                  bottom_offset: 8
-                  maximum: 256
-                  top_offset: 8
-                type: minecraft:range_biased
+                  bottom_inclusive:
+                    above_bottom: 0
+                  cutoff: 8
+                  top_inclusive:
+                    below_top: 0
+                type: minecraft:range_biased_to_bottom
               feature:
                 config:
                   hole_count: 1
@@ -1008,10 +1176,12 @@ features:
             config:
               decorator:
                 config:
-                  bottom_offset: 8
-                  maximum: 256
-                  top_offset: 16
-                type: minecraft:range_very_biased
+                  bottom_inclusive:
+                    above_bottom: 0
+                  cutoff: 8
+                  top_inclusive:
+                    below_top: 8
+                type: minecraft:range_very_biased_to_bottom
               feature:
                 config:
                   hole_count: 1
@@ -1055,24 +1225,30 @@ features:
   - config:
       decorator:
         config:
-          probability: 0.1
           step: liquid
         type: minecraft:carving_mask
       feature:
         config:
-          place_in:
-          - Name: minecraft:water
-            Properties:
-              level: '0'
-          place_on:
-          - Name: minecraft:stone
-          place_under:
-          - Name: minecraft:water
-            Properties:
-              level: '0'
-          to_place:
-            Name: minecraft:seagrass
-        type: minecraft:simple_block
+          decorator:
+            config:
+              chance: 10
+            type: minecraft:chance
+          feature:
+            config:
+              place_in:
+              - Name: minecraft:water
+                Properties:
+                  level: '0'
+              place_on:
+              - Name: minecraft:stone
+              place_under:
+              - Name: minecraft:water
+                Properties:
+                  level: '0'
+              to_place:
+                Name: minecraft:seagrass
+            type: minecraft:simple_block
+        type: minecraft:decorated
     type: minecraft:decorated
   - config:
       decorator:
